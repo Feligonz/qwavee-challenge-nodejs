@@ -4,7 +4,7 @@ Tu tarea consiste en desarrollar una aplicación de gestión de productos utiliz
 
 ## Item 1: Configuración del proyecto y endpoints
 
-1. Configura un nuevo proyecto de Node.js utilizando el framework de tu elección (por ejemplo, Express).
+1. Configura un nuevo proyecto de Node.js utilizando el marco proporcionado(nestjs) que tiene instalada la dependencia de typeorm.
 2. Crea los siguientes endpoints:
 
    - `GET /productos`: Devuelve la lista de todos los productos.
