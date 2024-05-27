@@ -1,38 +1,73 @@
-# Challenge de Node.js: Gestión de Productos
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-Tu tarea consiste en desarrollar una aplicación de gestión de productos utilizando Node.js. La aplicación permitirá a los usuarios realizar las siguientes operaciones: agregar un nuevo producto, ver la lista de productos existentes, actualizar la información de un producto y eliminar un producto.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Item 1: Configuración del proyecto y endpoints
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-1. Configura un nuevo proyecto de Node.js utilizando el marco proporcionado(nestjs) que tiene instalada la dependencia de typeorm.
-2. Crea los siguientes endpoints:
+## Description
 
-   - `GET /productos`: Devuelve la lista de todos los productos.
-   - `POST /productos`: Agrega un nuevo producto a la base de datos.
-   - `PUT /productos/:id`: Actualiza la información de un producto existente.
-   - `DELETE /productos/:id`: Elimina un producto de la base de datos.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Item 2: Base de datos
+## Installation
 
-1. Diseña el esquema de la base de datos para almacenar la información de los productos. Los campos mínimos requeridos son:
+```bash
+$ npm install
+```
 
-   - `id`: Identificador único del producto.
-   - `nombre`: Nombre del producto.
-   - `precio`: Precio del producto.
-   - `descripcion`: Descripción del producto.
+## Running the app
 
-2. Utiliza el sistema de gestión de bases de datos relacional de tu elección (por ejemplo, MySQL, PostgreSQL) para crear la base de datos y la tabla correspondiente al esquema diseñado.
+```bash
+# development
+$ npm run start
 
-## Item 3: Implementación de los endpoints
+# watch mode
+$ npm run start:dev
 
-Implementa la lógica necesaria en cada uno de los endpoints para realizar las operaciones mencionadas anteriormente (agregar, ver, actualizar y eliminar productos). Asegúrate de manejar los posibles errores y devolver las respuestas apropiadas en cada caso (por ejemplo, 404 si un producto no existe).
+# production mode
+$ npm run start:prod
+```
 
-## Item 4 (opcional): Validaciones y mejoras adicionales
+## Test
 
-1. Agrega validaciones para los datos ingresados al crear o actualizar un producto (por ejemplo, asegurarse de que el precio sea un número positivo).
-2. Implementa paginación o filtrado para la lista de productos en el endpoint `GET /productos`, de manera que se puedan obtener subconjuntos de productos según criterios especificados en la solicitud (por ejemplo, limitar la cantidad de productos devueltos).
+```bash
+# unit tests
+$ npm run test
 
-Recuerda que además de cumplir con los requerimientos del challenge, se valorará la calidad del código, la estructura del proyecto y la eficiencia en el manejo de la base de datos.
+# e2e tests
+$ npm run test:e2e
 
-¡Buena suerte con el challenge de Node.js!
+# test coverage
+$ npm run test:cov
+```
 
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
