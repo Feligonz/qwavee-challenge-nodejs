@@ -21,10 +21,16 @@ let ProductService = class ProductService {
     constructor(productRepository) {
         this.productRepository = productRepository;
     }
-    async findAll(page, limit, nombre) {
+    async findAll(page, limit, nombre, minPrecio, maxPrecio) {
         const query = this.productRepository.createQueryBuilder('product');
         if (nombre) {
             query.where('product.nombre LIKE :nombre', { nombre: `%${nombre}%` });
+        }
+        if (minPrecio !== undefined) {
+            query.andWhere('product.precio >= :minPrecio', { minPrecio });
+        }
+        if (maxPrecio !== undefined) {
+            query.andWhere('product.precio <= :maxPrecio', { maxPrecio });
         }
         query.skip((page - 1) * limit).take(limit);
         const [result, total] = await query.getManyAndCount();

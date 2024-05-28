@@ -12,9 +12,11 @@ export class ProductController {
     @Query('page') page = 1,
     @Query('limit') limit = 10,
     @Query('nombre') nombre?: string,
+    @Query('minPrecio') minPrecio?: number,
+    @Query('maxPrecio') maxPrecio?: number,
   ) {
     limit = limit > 100 ? 100 : limit;
-    const [data, total] = await this.productService.findAll(page, limit, nombre);
+    const [data, total] = await this.productService.findAll(page, limit, nombre, minPrecio, maxPrecio);
     return {
       data,
       total,

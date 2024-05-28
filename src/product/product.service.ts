@@ -12,11 +12,19 @@ export class ProductService {
     private productRepository: Repository<Product>,
   ) {}
 
-  async findAll(page: number, limit: number, nombre?: string): Promise<[Product[], number]> {
+  async findAll(page: number, limit: number, nombre?: string, minPrecio?: number, maxPrecio?: number): Promise<[Product[], number]> {
     const query = this.productRepository.createQueryBuilder('product');
 
     if (nombre) {
       query.where('product.nombre LIKE :nombre', { nombre: `%${nombre}%` });
+    }
+
+    if(minPrecio !== undefined){
+      query.andWhere('product.precio >= :minPrecio', {minPrecio});
+    }
+
+    if(maxPrecio !== undefined){
+      query.andWhere('product.precio <= :maxPrecio', {maxPrecio});
     }
 
     query.skip((page - 1) * limit).take(limit);

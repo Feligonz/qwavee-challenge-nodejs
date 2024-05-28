@@ -21,9 +21,9 @@ let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
     }
-    async findAll(page = 1, limit = 10, nombre) {
+    async findAll(page = 1, limit = 10, nombre, minPrecio, maxPrecio) {
         limit = limit > 100 ? 100 : limit;
-        const [data, total] = await this.productService.findAll(page, limit, nombre);
+        const [data, total] = await this.productService.findAll(page, limit, nombre, minPrecio, maxPrecio);
         return {
             data,
             total,
@@ -47,8 +47,10 @@ __decorate([
     __param(0, (0, common_1.Query)('page')),
     __param(1, (0, common_1.Query)('limit')),
     __param(2, (0, common_1.Query)('nombre')),
+    __param(3, (0, common_1.Query)('minPrecio')),
+    __param(4, (0, common_1.Query)('maxPrecio')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object, String]),
+    __metadata("design:paramtypes", [Object, Object, String, Number, Number]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "findAll", null);
 __decorate([
