@@ -1,10 +1,11 @@
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { GetProductsQueryDto } from './dto/get-product-query.dto';
 export declare class ProductController {
     private readonly productService;
     constructor(productService: ProductService);
-    findAll(page?: number, limit?: number, nombre?: string, minPrecio?: number, maxPrecio?: number): Promise<{
+    findAll(query: GetProductsQueryDto): Promise<{
         data: import("./entities/product.entity").Product[];
         total: number;
         page: number;
